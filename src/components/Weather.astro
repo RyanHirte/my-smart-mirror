@@ -8,7 +8,7 @@ const APIKEY = import.meta.env.PUBLIC_WEATHER_API;
 // API endpoint URL
 const queryEndpoint = 'https://api.openweathermap.org/data/2.5/weather';
 // City
-const queryCity = 'Cheney';
+const queryCity = 'Spokane';
 // Units for Farenheit
 const queryUnits = 'imperial';
 
@@ -33,7 +33,7 @@ fetch(url)
     
     // Set DOM Elements
     city.textContent = data.name; 
-    temp.textContent = data.main.temp;
+    temp.textContent = `${data.main.temp} °F`;
 
     icon.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
   
@@ -42,12 +42,17 @@ fetch(url)
 
 
 <!-- Weather -->
-<section class="weather">
-
-      <h1>Weather</h1>
-      <data class="city">City</data>
-      <data class="temp">Temp</data>
-      <img class="icon" 
-      src="https://via.placeholder.com/150" alt="Placeholder">
+<section class="weather card bg-base-100 w-96 shadow-xl h-60 bg-opacity-50 backdrop-blur-md mt-4">
+  <figure class="px-10 pt-10">
+    <img
+      src="https://via.placeholder.com/150"
+      alt="Placeholder"
+      class="rounded-xl icon" />
+  </figure>
+  <div class="card-body">
+    <h1 class="card-title">Weather</h1>
+    <data class="city">City</data>
+    <data class="temp">Temp</data>
+  </div>
       
 </section>
