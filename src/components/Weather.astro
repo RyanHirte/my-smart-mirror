@@ -18,6 +18,7 @@ const url = `${queryEndpoint}?q=${queryCity}&appid=${APIKEY}&units=${queryUnits}
 // Get DOM Elements
 const city = document.querySelector('.city');
 const temp = document.querySelector('.temp');
+const feels_like = document.querySelector('.feels_like');
 const icon = document.querySelector('.icon');
 
 // Using fetch to get data
@@ -33,7 +34,8 @@ fetch(url)
     
     // Set DOM Elements
     city.textContent = data.name; 
-    temp.textContent = `${data.main.temp} °F`;
+    temp.textContent = `Temp: ${data.main.temp} °F`;
+    feels_like.textContent = `Feels like: ${data.main.feels_like} °F`;
 
     icon.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
   
@@ -53,6 +55,7 @@ fetch(url)
     <h1 class="card-title">Weather</h1>
     <data class="city">City</data>
     <data class="temp">Temp</data>
+    <data class="feels_like">humidity</data>
   </div>
       
 </section>
