@@ -30,7 +30,7 @@ const theClockApp = () => {
   // Get 12 hour format
   gotHours = gotHours % 12 || 12;
   // Optionally, append zero to single digit hours
-  gotHours = gotHours < 10 ? `0${gotHours}` : gotHours;   
+  //gotHours = gotHours < 10 ? `0${gotHours}` : gotHours;   
   // Optionally, append zero to single digit minutes
   gotMinutes = gotMinutes < 10 ? `0${gotMinutes}` : gotMinutes;
  
@@ -65,9 +65,9 @@ const theClockApp = () => {
   setInterval(theClockApp, 1000);
 </script>
 
-<section class="time card bg-base-100 w-96 shadow-xl h-32 bg-opacity-50 backdrop-blur-md mb-48">
-    <time>
+<section class="time card bg-base-100 w-96 shadow-xl h-32 bg-opacity-50 backdrop-blur-md mb-48 flex items-center justify-center">
+    <time class="card-title text-6xl">
       <data class="hours">HH</data> : <data class="minutes">MM</data> 
       <data class="amOrPM">AM/PM</data>
     </time>
-<section>
+  </section>
